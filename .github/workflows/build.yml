@@ -20,16 +20,10 @@ jobs:
         with:
           channel: 'stable'
 
-      - name: Install Flet
+      - name: Install Dependencies
         run: |
           pip install flet requests
 
-     - name: Build APK
+      - name: Build APK
         run: |
           flet build apk
-
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: JokerPro-Release
-          path: build/apk/*.apk
